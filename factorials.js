@@ -4,5 +4,13 @@
 // please write a solution for Robin that returns the factorial of that number?
 
 const factorial = (number) => {
-  
+  if (number === 0) return 0;
+
+  let initial = 1;
+  for (let i = number; i > 0; i--) {
+    initial *= i;
+  }
+  return initial;
 }
+
+factorial(0);
