@@ -7,5 +7,8 @@
 // that the number of stars matches with the exact number of digits being replaced.
 
 const ccNumberHider = (ccNumber) => {
-  ccNumber.replace(/asd/g, '*')
+  const ccString = JSON.stringify(ccNumber);
+  console.log(ccString.replace(/\d{12}/g, '************'));
 }
+
+ccNumberHider(1234123412341234);
