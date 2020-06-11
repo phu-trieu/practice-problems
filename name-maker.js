@@ -6,5 +6,10 @@
 //  team and write a function that will return this new name.
 
 const nameMaker = (array) => {
-  
+  const newArray = array.map(name => {
+    return name[0].toUpperCase();
+  })
+  console.log(newArray.sort().join(''));
 }
+
+nameMaker(['Delta', 'Alpha', 'Charlie', 'Bravo', 'foxtrot', 'amber', 'balogni']);
