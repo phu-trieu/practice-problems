@@ -8,5 +8,8 @@
 // it a cat I saw"
 
 const palindromes = string => {
-
+  const reverseString = string.split('').reverse().join('');
+  return (string === reverseString) ? 'This is a palindrome' : 'This is not a palindrome';
 }
+
+palindromes('racecar');
