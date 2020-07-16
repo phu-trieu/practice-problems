@@ -5,9 +5,11 @@
 // this: '1 x 1 = 1' . Have fun taking a trip down memory lane!
 
 const multiplicationTable = num => {
-  for (let i = 0; i <= num; i++) {
-    console.log(`1 x ${i} = ${1*i}`)
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num; j++) {
+      console.log(`${i} x ${j} = ${i * j}`)
+    }
   }
 }
 
-multiplicationTable(5);
+multiplicationTable(15);
