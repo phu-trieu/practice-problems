@@ -7,5 +7,7 @@
 // no "fly"s or traces of "fly"s, return the string "No flies here!" Give it a try!
 
 const flies = string => {
-
+  return ((/[fly]/gi).test(string) ? console.log(string.replace(/([fly])/gi, '')) : console.log('No flies here!'))
 }
+
+flies('flyflylflyflyflflflflflflyyyyyyyyhenlo');
