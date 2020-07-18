@@ -8,6 +8,8 @@
 
 // Write a function that returns the total number of non - nested items in a nested array.
 
-const lengthOfNestedArrays = array => {
-
+const lengthOfNestedArrays = arr => {
+  return (arr.length ? arr.join('').replace(/(,)/g, '').length : 0)
 }
+
+lengthOfNestedArrays([1,[1,2,[1,2,3,[1,2,3,4]]]])
