@@ -6,5 +6,5 @@
 // Can you write a function that determines whether or not a word is balanced?
 
 const balancedWords = string => {
-
+  // string.charCodeAt()
 }
