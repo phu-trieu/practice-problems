@@ -7,4 +7,13 @@
 
 const balancedWords = string => {
   // string.charCodeAt()
+  const half = parseInt((string.length / 2).toFixed(0));
+
+  const a = string.slice(0, half-1);
+  console.log(a);
+  console.log(half+1)
+  const b = string.slice(half, string.length);
+  console.log(b);
 }
+
+balancedWords('abcba');
