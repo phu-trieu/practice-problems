@@ -6,14 +6,25 @@
 // Can you write a function that determines whether or not a word is balanced?
 
 const balancedWords = string => {
-  // string.charCodeAt()
-  const half = parseInt((string.length / 2).toFixed(0));
+  let c = string.split('');
+  let firstHalf = 0;
+  let secondHalf = 0;
 
-  const a = string.slice(0, half-1);
-  console.log(a);
-  console.log(half+1)
-  const b = string.slice(half, string.length);
-  console.log(b);
+  if (string.length % 2 !== 0) {
+    c.splice(Math.floor(string.length / 2), 1);
+  }
+
+  const half = Math.floor((c.length / 2));
+
+  const a = c.slice(0, half);
+  const b = c.slice(half, string.length);
+
+  for (let i = 0; i < a.length; i++) {
+    firstHalf += a[i].charCodeAt();
+    secondHalf += b[i].charCodeAt();
+  }
+
+  return (firstHalf === secondHalf ? console.log('This is a balanced word') : console.log('This is not a balanced word'))
 }
 
 balancedWords('abcba');
