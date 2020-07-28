@@ -4,11 +4,21 @@
 // is given, the result will be(3, 4).
 
 const shortestStepsArr = arr => {
+  const arrayOfDifferences = [];
   for (let i = 1; i < arr.length; i++) {
     let difference = Math.abs(arr[i] - arr[i-1]);
-    console.log(difference)
-
+    arrayOfDifferences.push(difference);
   }
+
+  let smallest = arrayOfDifferences[0];
+  let smallestIndex;
+  for (let i = 1; i < arrayOfDifferences.length; i++) {
+    if (arrayOfDifferences[i] < smallest) {
+      smallest = arrayOfDifferences[i];
+      smallestIndex = i;
+    }
+  }
+  return console.log(`(${arr[smallestIndex]}, ${arr[smallestIndex + 1]})`);
 }
 
-shortestStepsArr([1,3,4,8,12,17,20])
+shortestStepsArr([1,8,3,4,12,17,20])
