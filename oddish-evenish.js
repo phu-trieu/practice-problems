@@ -7,7 +7,7 @@
 // oddishOrEvenish(41) should return "Oddish", since 4 + 1 = 5.
 
 const oddishOrEvenish = num => {
-
+  return ((JSON.stringify(num).split('').map(digit => parseInt(digit)).reduce((acc, value) => acc + value)) % 2 === 0 ? 'Evenish' : 'Oddish');
 }
 
 oddishOrEvenish(121);
