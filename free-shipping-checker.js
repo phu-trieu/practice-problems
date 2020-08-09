@@ -7,7 +7,8 @@
 // freeShipping({ "Laptop": 999.99 }) ➞ true
 
 const freeShippingChecker = items => {
-
+  const sum = Object.values(items).reduce((acc, value) => acc + value);
+  return (sum >= 30 ? console.log(true) : console.log(false))
 }
 
-freeShippingChecker({"Pens": 4.99, "Notebook": 3.99});
+freeShippingChecker({"Pens": 40.99, "Notebook": 3.99});
