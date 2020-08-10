@@ -7,7 +7,15 @@
 // less than 4, 000, 000 ?
 
 const evenFibonacciSequence = () => {
-
+  const arr = [1,2,3];
+  let evenCounter = 1;
+  while (arr[arr.length - 1] < 4000000) {
+    let last = arr[arr.length - 1];
+    let secondLast = arr[arr.length - 2];
+    if (last % 2 === 0) {evenCounter++;}
+    arr.push(last + secondLast);
+  }
+  return console.log(evenCounter);
 }
 
 evenFibonacciSequence();
