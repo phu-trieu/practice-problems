@@ -5,7 +5,8 @@
 // convert any string in Camel case to Pothole case.
 
 const potholeCaseConverter = str => {
-
+  const regex = /(?<=[a-z])(?=[A-Z])/g;
+  return console.log(str.split(regex).map(string => string.toLowerCase()).join('_'));
 }
 
-potholeCaseConverter('fooBar');
+potholeCaseConverter('fooBarFoo');
