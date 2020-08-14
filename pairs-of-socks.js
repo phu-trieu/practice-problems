@@ -6,7 +6,7 @@
 // pairs("ammtaxt")-- > 3
 
 const pairsOfSocks = socks => {
-
+  return console.log((socks.split('').sort().join('').match(/(.)\1/g) || []).length)
 }
 
-pairsOfSocks('ammtaxt');
+pairsOfSocks('ammtaxtaaaa');
