@@ -10,7 +10,19 @@
 //   doYouLoveMe(4) ==> "Loves me, Loves me not, Loves me, LOVES ME NOT"
 
 const lovesMeLovesMeNot = petals => {
+  const str = [];
+  for (let i = 0; i < petals; i++) {
+    if (i % 2 === 0) {
+      str.push('Loves me')
+    } else {
+      str.push('Loves me not')
+    }
+  }
+  str[petals - 1] = str[petals - 1].toUpperCase();
+  return console.log(str.join(', '));
+
+  // console.log([...Array(n)].map((v, i) => ("Loves me" + (i % 2 ? " not" : ""))[i === n - 1 ? "toUpperCase" : "slice"]()).join(", "));
 
 }
 
-lovesMeLovesMeNot(4);
+lovesMeLovesMeNot(5);
