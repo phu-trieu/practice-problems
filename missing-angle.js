@@ -10,7 +10,8 @@
 // would be 149 degrees, which makes it obtuse.
 
 const missingAngle = (angle1, angle2) => {
-
+  const angle3 = 180 - (angle1 + angle2);
+  return angle3 < 90 ? 'acute' : angle3 > 90 ? 'obtuse' : 'right';
 }
 
-missingAngle(45, 45);
+console.log(missingAngle(45, 45));
