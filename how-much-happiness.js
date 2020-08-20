@@ -8,7 +8,7 @@
 // Has a mouth.A mouth is ) or D
 
 const howMuchHappiness = arr => {
-
+  return arr.join(',').match(/[:;][-~]?[)D]/g).length;
 }
 
-howMuchHappiness([';)' , ':-)', ':--)']);
+console.log(howMuchHappiness([';)', ':-)', ':--)', ';~)', ';~~)']));
