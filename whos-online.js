@@ -14,7 +14,11 @@
 // ex) whoIsOnline(["user123", "user4"]) ➞ "user123 and user4 are online"
 
 const whosOnline = arr => {
+  const l = arr.length;
+  const user1 = arr[0];
+  const user2 = arr[1];
 
+  return l === 0 ? 'There is nobody online.' : l === 1 ? `${user1} online` : l === 2 ? `${user1} and ${user2} are online` : `${user1}, ${user2}, and ${l -2} more are online.`
 }
 
-whoIsOnline(["user123", "user4"]);
+console.log(whosOnline(['user1', 'user2', 'user3', 'user4']));
