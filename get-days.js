@@ -20,3 +20,5 @@
 const getDays = (date1, date2) => {
 
 }
+
+console.log(getDays(new Date("June 14, 2019"), new Date("June 20, 2019")));
