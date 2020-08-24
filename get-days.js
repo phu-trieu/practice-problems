@@ -18,7 +18,7 @@
 // ) ➞ 10
 
 const getDays = (date1, date2) => {
-
+  return (date2.getTime() - date1.getTime()) / 86400000;
 }
 
-console.log(getDays(new Date("June 14, 2019"), new Date("June 20, 2019")));
+console.log(getDays(new Date("June 14, 2019"), new Date("June 15, 2020")));
