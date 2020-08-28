@@ -4,7 +4,8 @@
 
 
 const numericPalindromes = num => {
-  const str = String(num);
+  const reverse = Number(String(num).split('').reverse().join(''));
+  return (num === reverse ? num : 'Not a palindrome');
 }
 
-numericPalindromes(121);
+console.log(numericPalindromes(12221));
