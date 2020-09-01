@@ -3,7 +3,7 @@
 // example, "book" would turn into "bok".
 
 const removeLastVowel = str => {
-
+  return str.replace(/[aeiou]([^aeiou]*?)(?= |$)/gi, '$1');
 }
 
 console.log(removeLastVowel('Hey, VSauce Michael here'));
