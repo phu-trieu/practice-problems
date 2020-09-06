@@ -5,7 +5,20 @@
 // taken.
 
 const steps = str => {
+  if (!str || str === str.toLowerCase() || str === str.toUpperCase()) {
+    return 0;
+  }
 
+  let toLowerCase = 0;
+  let toUpperCase = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toLowerCase()) {
+      toUpperCase++
+    } else if (str[i] === str[i].toUpperCase()) {
+      toLowerCase++
+    }
+  }
+  return (toLowerCase > toUpperCase ? toUpperCase : toLowerCase);
 }
 
 console.log(steps('I\'m gonna do what\'s called a pro gamer move'));
