@@ -5,7 +5,13 @@
 // the total number of cumulative pennies that you will have.
 
 const doubledPennies = days => {
-
+  let initial = 1;
+  let sum = 1;
+  for (let i = 1; i < days; i++) {
+    initial = initial * 2;
+    sum += initial;
+  }
+  return sum;
 }
 
-console.log(doubledPennies(5));
+console.log(doubledPennies(3));
