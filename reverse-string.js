@@ -2,7 +2,7 @@
 // and returns the string in reversed order.
 
 const reverseString = str => {
-
+  return str.split('').reverse().join('');
 }
 
 console.log(reverseString('olleH'));
