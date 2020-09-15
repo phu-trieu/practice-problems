@@ -6,7 +6,17 @@
 // string in ALL CAPS and add an exclamation point to the end of the string.
 
 const fantasticFireworks = num => {
-
+  if (num < 2) return 'boom';
+  const arr = ['B', 'm'];
+  arr.splice(1, 0, 'o'.repeat(num));
+  let boom = arr.join('');
+  if (num % 2 === 0) {
+    boom = boom + '!'
+  }
+  if (num % 5 === 0) {
+    boom = boom.toUpperCase();
+  }
+  return boom;
 }
 
 console.log(fantasticFireworks(10));
