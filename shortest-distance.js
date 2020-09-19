@@ -6,7 +6,19 @@
 // question ?
 
 const shortestDistance = arr => {
-
+  let smallest = arr[1] - arr[0];
+  const pair = {
+    pointA: null,
+    pointB: null
+  }
+  arr.forEach((v, i, a) => {
+    if (a[i] - a[i-1] < smallest) {
+      smallest = a[i] - a[i-1];
+      pair.pointA = a[i - 1];
+      pair.pointB = a[i];
+    }
+  })
+  return `${pair.pointA}, ${pair.pointB}`;
 }
 
 console.log(shortestDistance([1,5,10,11,13,16]));
