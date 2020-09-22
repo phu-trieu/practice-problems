@@ -5,7 +5,16 @@
 //  RPS game today. Robin challenges you!
 
 const rockPaperScissors = choice => {
+  const choices = ['rock', 'paper', 'scissors'];
+  console.log(Math.round(Math.random() * 2))
+  const computerChoice = choices[Math.round(Math.random() * 2)];
+  console.log(computerChoice);
 
+  const announcement = `You played ${choice}. Computer played ${computerChoice}.`
+
+  if (choice === 'rock' && computerChoice === 'rock') return announcement + ' It\'s a tie.';
+  if (choice === 'rock' && computerChoice === 'paper') return announcement + ' You lost.';
+  if (choice === 'rock' && computerChoice === 'scissors') return announcement + ' You won!';
 }
 
 console.log(rockPaperScissors('rock'));
