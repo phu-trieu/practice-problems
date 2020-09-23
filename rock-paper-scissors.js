@@ -6,15 +6,20 @@
 
 const rockPaperScissors = choice => {
   const choices = ['rock', 'paper', 'scissors'];
-  console.log(Math.round(Math.random() * 2))
   const computerChoice = choices[Math.round(Math.random() * 2)];
-  console.log(computerChoice);
-
   const announcement = `You played ${choice}. Computer played ${computerChoice}.`
 
-  if (choice === 'rock' && computerChoice === 'rock') return announcement + ' It\'s a tie.';
-  if (choice === 'rock' && computerChoice === 'paper') return announcement + ' You lost.';
-  if (choice === 'rock' && computerChoice === 'scissors') return announcement + ' You won!';
+  if (choice === computerChoice) {
+    return announcement + ' It\'s a tie.';
+  } else if (
+    (choice === 'rock' && computerChoice === 'scissors') ||
+    (choice === 'paper') && computerChoice === 'rock' ||
+    (choice === 'scissors' && computerChoice === 'paper')
+    ) {
+      return announcement + ' You won!';
+    } else {
+      return announcement + ' You lost!';
+    }
 }
 
 console.log(rockPaperScissors('rock'));
