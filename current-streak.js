@@ -5,7 +5,7 @@
 //  return 0.
 
 const currentStreak = arr => {
-
+  const currentDay = arr[0];
 }
 
 console.log(currentStreak([new Date(), new Date('September 23, 2020'), new Date('September 22, 2020')]))
