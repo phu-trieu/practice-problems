@@ -5,8 +5,13 @@
 //  return 0.
 
 const currentStreak = arr => {
-  const currentDay = arr[0].getTime();
-  return currentDay;
+  if (arr.length === 0) return 0;
+  const getTimes = arr.map(date => {
+    date.setHours(0, 0, 0, 0);
+    return date.getTime();
+  }).sort((a, b) => b - a)
+  console.log(getTimes);
+  return getTimes[0] - getTimes[1];
 }
 
-console.log(currentStreak([new Date(), new Date('September 23, 2020'), new Date('September 22, 2020')]))
+console.log(currentStreak([new Date(), new Date('September 26, 2020'), new Date('September 25, 2020')]))
