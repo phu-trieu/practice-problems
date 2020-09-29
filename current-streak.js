@@ -6,12 +6,18 @@
 
 const currentStreak = arr => {
   if (arr.length === 0) return 0;
-  const getTimes = arr.map(date => {
+  let counter = 1;
+  arr.map(date => {
     date.setHours(0, 0, 0, 0);
     return date.getTime();
-  }).sort((a, b) => b - a)
-  console.log(getTimes);
-  return getTimes[0] - getTimes[1];
+  })
+  .sort((a, b) => b - a)
+  .map((v, i, a) => {
+    if (a[i] - a[i+1] === 86400000) {
+      counter++
+    } else return;
+  })
+  return `You have been on a streak for ${counter} days.`
 }
 
 console.log(currentStreak([new Date(), new Date('September 26, 2020'), new Date('September 25, 2020')]))
