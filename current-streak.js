@@ -4,20 +4,19 @@
 //  consecutive days you have been practicing coding). If the array is empty,
 //  return 0.
 
-const currentStreak = arr => {
+const currentStreak = (currentDate, arr) => {
   if (arr.length === 0) return 0;
-  let counter = 1;
-  arr.map(date => {
-    date.setHours(0, 0, 0, 0);
-    return date.getTime();
-  })
-  .sort((a, b) => b - a)
-  .map((v, i, a) => {
-    if (a[i] - a[i+1] === 86400000) {
-      counter++
-    } else return;
-  })
-  return `You have been on a streak for ${counter} days.`
+  let streak = 1;
+  if (currentDate.setHours(0, 0, 0, 0) - arr[0] === 86400000) {
+    streak++;
+    const getTimes = arr.map(date => date.getTime()).sort((a, b) => b - a);
+    for (let i = 0; i < getTimes.length; i++) {
+      if (getTimes[i] - getTimes[i + 1] === 86400000) {
+        streak++
+      } else break;
+    }
+  }
+  return `You have been on a streak for ${streak} ${(streak > 1 ? 'days' : 'day')}.`;
 }
 
-console.log(currentStreak([new Date(), new Date('September 26, 2020'), new Date('September 25, 2020')]))
+console.log(currentStreak(new Date(), [new Date('September 28, 2020'), new Date('September 26, 2020')]))
