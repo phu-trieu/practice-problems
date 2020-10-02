@@ -4,7 +4,7 @@
 // January = 1, February = 2, etc.You can pass in the full year, like 2020 or 1975.
 
 const fridayThe13th = (month, year) => {
-
+  return new Date(year, (month - 1), 13).getDay() === 5;
 }
 
-console.log(fridayThe13th(3, 2020));
+console.log(fridayThe13th(4, 2020));
