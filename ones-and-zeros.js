@@ -15,7 +15,7 @@
 // 1001101110 -- > false
 
 const onesAndZeros = str => {
-
+  const one = true;
 }
 
 console.log(onesAndZeros('111000110010'));
