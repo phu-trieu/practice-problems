@@ -15,7 +15,21 @@
 // 1001101110 -- > false
 
 const onesAndZeros = str => {
-  const one = true;
+  if (str[str.length - 1] === '1') return false;
+  let oneCounter = 0;
+  let zeroCounter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '1' && str[i - 1] === '0') {
+      if (oneCounter !== zeroCounter) return false;
+      oneCounter++;
+    } else if (str[i] === '1' && str[i - 1] !== '0') {
+      oneCounter++;
+    } else {
+      zeroCounter++;
+    }
+  }
+  return oneCounter === zeroCounter;
 }
 
-console.log(onesAndZeros('111000110010'));
+console.log(onesAndZeros('1110001100101010'));
