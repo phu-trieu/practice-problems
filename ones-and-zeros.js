@@ -32,4 +32,4 @@ const onesAndZeros = str => {
   return oneCounter === zeroCounter;
 }
 
-console.log(onesAndZeros('1110001100101010'));
+console.log(onesAndZeros('111000110010'));
