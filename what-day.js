@@ -5,7 +5,7 @@
 //   day it would be in 3 days, we would return ["Thursday", "Saturday", "Sunday"]
 
 const whatDay = (arr, n) => {
-
+  return new Date('Monday');
 }
 
 console.log(whatDay(['Monday', 'Wednesday', 'Thursday'], 3));
