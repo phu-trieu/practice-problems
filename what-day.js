@@ -5,17 +5,13 @@
 //   day it would be in 3 days, we would return ["Thursday", "Saturday", "Sunday"]
 
 const whatDay = (arr, n) => {
-  // return new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date());
-  const days = {
-    Sunday: 0,
-    Monday: 1,
-    Tuesday: 2,
-    Wednesday: 3,
-    Thursday: 4,
-    Friday: 5,
-    Saturday: 6
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    const newDay = (days.indexOf(arr[i]) + n) % 7;
+    newArr.push(days[newDay]);
   }
-  return days[arr[0]];
+  return newArr;
 }
 
 console.log(whatDay(['Monday', 'Wednesday', 'Thursday'], 3));
