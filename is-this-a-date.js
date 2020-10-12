@@ -12,7 +12,7 @@
 // console.log(isDate([1, 2, 4, 0]));
 
 const isThisADate = value => {
-
+  return `This is${(isNaN(new Date(value).getTime()) ? ' not' : '')} a valid date.`
 }
 
-console.log(isThisADate("October 13, 2014 11:13:00"));
+console.log(isThisADate('a'));
