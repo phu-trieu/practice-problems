@@ -8,7 +8,10 @@
 // ex) addUp([1, 2], [2, 3, 5], 4) --> true
 
 const arrayAddUp = (arr1, arr2, int) => {
-
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(int - arr1[i])) return true;
+  }
+  return false;
 }
 
 console.log(arrayAddUp([1, 2], [2, 3, 5], 4));
