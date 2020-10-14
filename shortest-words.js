@@ -4,7 +4,14 @@
 // words in the string lowercase and in sorted in alphabetical order?
 
 const shortestWords = str => {
-
+  const arr = str.split(' ');
+  let shortestLength = arr[0].length;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length < shortestLength) {
+      shortestLength = arr[i].length
+    }
+  }
+  return arr.filter(word => word.length === shortestLength).sort((a, b) => a.localeCompare(b));
 }
 
-console.log(shortestWords('It\'s hot in Topeka'));
+console.log(shortestWords('It\'s hot in Topeka, uh oh'));
