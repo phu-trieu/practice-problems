@@ -11,13 +11,7 @@
 // numberSyllables("on-o-mat-o-poe-ia") ➞ 6
 
 const countSyllables = word => {
-  let counter = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === '-') {
-      counter++
-    }
-  }
-  return counter + 1;
+  return word.match(/-/gi).length + 1;
 }
 
 console.log((countSyllables("on-o-mat-o-poe-ia")));
