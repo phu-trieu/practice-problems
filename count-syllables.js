@@ -15,3 +15,4 @@ const countSyllables = word => {
 }
 
 console.log((countSyllables("on-o-mat-o-poe-ia")));
+console.log((countSyllables("mon-u-men-tal")));
