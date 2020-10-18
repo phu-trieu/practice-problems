@@ -3,7 +3,7 @@
 //   example: findMyIndex([1, 2, 3], 3) ➞ 2
 
 const findIndex = (arr, val) => {
-
+  return arr.indexOf(val);
 }
 
 console.log(findIndex([1, 2, 3, 4, 5], 4));
