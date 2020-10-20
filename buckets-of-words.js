@@ -12,3 +12,6 @@ const collectWords = (str, num) => {
 }
 
 console.log(collectWords("the mouse can creep", 10));
+
+// "the mouse can creep" => 19 characters
+// 19 / 10 = 1.9 ~ 2 => split string into 2 sections => 19 / 2 = 9.5 ~ 9
