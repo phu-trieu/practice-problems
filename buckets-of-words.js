@@ -8,7 +8,11 @@
 // ➞["the mouse", "can creep",]
 
 const collectWords = (str, num) => {
-
+  const arr = str.split(' ');
+  const newArr = [];
+  newArr.push(arr[0] + ' ' + arr[1]);
+  newArr.push(arr[2] + ' ' + arr[3])
+  return newArr;
 }
 
 console.log(collectWords("the mouse can creep", 10));
