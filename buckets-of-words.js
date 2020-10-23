@@ -11,7 +11,18 @@ const collectWords = (str, num) => {
   const arr = str.split(' ');
   const newArr = [];
   newArr.push(arr[0] + ' ' + arr[1]);
-  newArr.push(arr[2] + ' ' + arr[3])
+  newArr.push(arr[2] + ' ' + arr[3]);
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i+1; j < arr.length; j++) {
+      let count = 0;
+      let words = arr[i];
+      count += arr[i].length + arr[j].length + 1;
+      if (count > num) {
+
+      }
+      words += arr[j];
+    }
+  }
   return newArr;
 }
 
