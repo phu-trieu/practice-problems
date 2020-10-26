@@ -10,24 +10,37 @@
 const collectWords = (str, num) => {
   const arr = str.split(' ');
   const newArr = [];
-  newArr.push(arr[0] + ' ' + arr[1]);
-  newArr.push(arr[2] + ' ' + arr[3]);
   for (let i = 0; i < arr.length; i++) {
-    for (let j = i+1; j < arr.length; j++) {
-      let count = 0;
-      let words = arr[i];
-      count += arr[i].length + arr[j].length + 1;
-      if (count > num) {
-
+    let count = 0;
+    let words = arr[i];
+    if (arr[i].length > num) {
+      continue;
+    }
+    for (let j = i+1; j <= arr.length; j++) {
+      if (j === arr.length) {
+        if (words.length <= num) {
+          newArr.push(words)
+        }
+        break;
       }
-      words += arr[j];
+      count = words.length + arr[j].length + 1;
+      if (count > num) {
+        i = j - 1;
+        newArr.push(words);
+        break;
+      } else if (count <= num && j === arr.length - 1) {
+          words += ` ${arr[j]}`;
+          newArr.push(words);
+          return newArr;
+      }
+      words += ` ${arr[j]}`;
     }
   }
   return newArr;
 }
 
-console.log(collectWords("the mouse can creep", 10));
-
-// "the mouse can creep" => 19 characters
-// 19 / 10 = 1.9 ~ 2 => split string into 2 sections => 19 / 2 = 9.5 ~ 9
-// str.split('').map(split each word) => [[t, h, e], [m, o, u, s, e], [c, a, n], [c, r, e, e, p]]
+console.log(collectWords("the mouse can creep expeditiously", 100));
+console.log(collectWords("the mouse can creep expeditiously", 13));
+console.log(collectWords("the mouse can creep expeditiously", 5));
+console.log(collectWords("the mouse can creep expeditiously", 3));
+console.log(collectWords("the mouse can creep expeditiously", 2));
