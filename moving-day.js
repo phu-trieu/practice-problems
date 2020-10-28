@@ -5,7 +5,7 @@
 // width, and height. Good luck!
 
 const movingDay = multiArr => {
-
+  return multiArr.reduce((acc, current) => acc + (current[0] * current[1] * current[2]), 0);
 }
 
-console.log(movingDay([1, 2, 3], [4, 5, 6], [7, 8, 9]));
+console.log(movingDay([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
