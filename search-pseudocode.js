@@ -6,7 +6,7 @@
 // you decided to write in pseudocode. Write your pseudocode to at least surprise the
 // interviewer.
 
-const search = arr => {
+const search = (arr, start, end) => {
 
 }
 
