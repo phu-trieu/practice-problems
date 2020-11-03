@@ -15,7 +15,10 @@ const search = (arr, start, end) => {
     // if true, return false
   // check if "sorted" at "mid" index is equal to "Michael Buble"
     // if true, return true
-  // check if value at "mid" index of "sorted" is less than
+  // check if value at "mid" index of "sorted" is greater than "Michael Buble"
+    // if true, return "search" function with "sorted" passed as arr argument, "start" passed as "start" argument, and "mid" - 1 as "end" argument
+  // check if value at "mid" index of "sorted" is less than "Michael Buble"
+    // if true, return "search" function with "sorted" passed as arr argument, "mid" + 1 passed as "start" argument, and "end" passed as "end" argument
 }
 
 console.log(search(['Kobe Bryant', 'Madonna', 'Snoop Dogg', 'Michael Buble']));
