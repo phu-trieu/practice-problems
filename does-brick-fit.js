@@ -3,7 +3,7 @@
 // and height(h).
 
 const doesBrickFit = (a, b, c, w, h) => {
-  return true;
+  return ((a <= w && b <= h) || (a <= h && c <= w) || (c <= h && b <=w));
 }
 
 console.log(doesBrickFit(1, 1, 1, 1, 1))
