@@ -14,7 +14,10 @@
 // You can expect negative numbers too.
 
 const numberSplit = n => {
-
+  const arr = new Array;
+  arr.push(Math.floor(n / 2));
+  arr.push(n - arr[0]);
+  return arr;
 }
 
-console.log(numberSplit(4));
+console.log(numberSplit(-9));
