@@ -30,7 +30,7 @@
 // If you think recursion if fun, here is a collection of such challenges.
 
 const shiftToLeft = (x, y) => {
-
+  return;
 }
 
 console.log(shiftToLeft(5, 2));
