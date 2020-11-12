@@ -29,8 +29,7 @@
 // A non - recursive version of this challenge can be found in here.
 // If you think recursion if fun, here is a collection of such challenges.
 
-const shiftToLeft = (x, y) => {
-  return;
-}
+const shiftToLeft = (x, y) => y ? shiftToLeft(x * 2, y - 1) : x;
 
-console.log(shiftToLeft(5, 2));
+
+console.log(shiftToLeft(10, 3));
