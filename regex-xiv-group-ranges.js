@@ -20,7 +20,7 @@
 
 const REGEXP = /(red|blue) flag/gi;
 const match = str => {
-
+  return str.match(REGEXP);
 }
 
 console.log(match('red flag blue flag red red blue blue flag'))
