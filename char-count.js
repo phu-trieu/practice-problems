@@ -11,7 +11,8 @@
 // Your output must be case -sensitive(see second example).
 
 const charCount = (myChar, str) => {
-
+  const re = new RegExp(myChar, "g");
+  return (str.match(re) ? str.match(re).length : 0);
 }
 
 console.log(charCount('a', 'banana'));
