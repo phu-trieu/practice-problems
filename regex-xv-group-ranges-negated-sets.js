@@ -15,4 +15,9 @@
 
 //  "alice15@gmail.com".match(/REGEXP/gi) ➞["@", "."]
 
-const regex =
+const regex = /[^\w\d\s]/gi;
+const match = str => {
+  return str.match(regex);
+}
+
+console.log(match('abc 123 !@#'));
