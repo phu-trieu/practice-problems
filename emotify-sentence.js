@@ -20,13 +20,14 @@
 // Try to solve this without using conditional statements like if/else or switch.
 
 const emotify = str => {
+  const split = str.split(' ');
   const emotes = {
     smile: ':D',
     grin: ':)',
     sad: ':(',
     mad: ':P'
   }
-
+  return `Make me ${emotes[split[2]]}`;
 }
 
-console.log(emotify('Make me smile'));
+console.log(emotify('Make me mad'));
