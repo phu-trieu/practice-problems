@@ -11,8 +11,9 @@
 // All test cases contain valid strings.Don't worry about spaces, special characters
 // or numbers. They're all considered valid characters.
 
-const repeat = str => {
+const repeat = str => str.replace(/./g, '$&$&');
 
-}
 
 console.log(repeat('doggo'));
+console.log(repeat('pupper'));
+console.log(repeat('cat'));
