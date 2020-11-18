@@ -20,6 +20,12 @@
 // Try to solve this without using conditional statements like if/else or switch.
 
 const emotify = str => {
+  const emotes = {
+    smile: ':D',
+    grin: ':)',
+    sad: ':(',
+    mad: ':P'
+  }
 
 }
 
