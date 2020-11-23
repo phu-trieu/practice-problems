@@ -55,7 +55,7 @@ const generation = (x, y) => {
       f: 'great granddaughter'
     }
   }
-  return line[x + ''][y];
+  return line[x][y];
 }
 
 console.log(generation(-3, 'f'));
