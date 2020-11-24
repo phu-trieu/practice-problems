@@ -14,7 +14,10 @@
 //   Many approaches work here, but the eval() function is particularly useful!
 
 const isTrue = relation => {
-
+  const x = parseInt(relation.split(/\D/gi)[0]);
+  const y = parseInt(relation.split(/\D/gi)[1]);
+  const operator = relation.split(/\d/gi).join('');
+  return (operator === '>' ? x > y : operator === '<' ? x < y : operator === '=' ? x === y : 'Not a valid operator');
 }
 
-console.log(isTrue('2=2'));
+console.log(isTrue('15>4'));
