@@ -11,7 +11,7 @@
 // The number 0 should return true(even though it's not a positive number).
 
 const isRepdigit = num => {
-  const test = true;
+  return new Set('' + num).size === 1;
 }
 
 console.log(isRepdigit(66));
