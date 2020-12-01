@@ -14,7 +14,7 @@
 // count(638476) ➞ 6
 
 const count = n => {
-
+  return Math.abs(n).toString().length;
 }
 
-console.log(count(619));
+console.log(count(-654321));
