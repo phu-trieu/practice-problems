@@ -12,6 +12,6 @@
 // const REGEXP = /your solution/
 // REGEXP.test("") ➞ true
 
-const regex = //gi;
+const regex = /^$/gi;
 
 console.log(regex.test(''));
