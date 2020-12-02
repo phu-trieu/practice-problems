@@ -9,7 +9,7 @@
 // addName({ piano: 500, stereo: 300 }, "Caligula", 440) ➞ { piano: 500, stereo: 300, Caligula: 440 }
 
 const addName = (obj, name, value) => {
-
+  return {...obj, [name]: value}
 }
 
 console.log(addName({ piano: 500, stereo: 300 }, "Caligula", 440));
