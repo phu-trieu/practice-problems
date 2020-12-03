@@ -18,7 +18,16 @@
 // Division results will be rounded down to its integral part.
 
 const operation = (a, b, op) => {
-
+  const x = parseInt(a);
+  const y = parseInt(b);
+  return (
+    x / y === Infinity ? 'undefined' :
+    op === 'add' ? x + y :
+    op === 'subtract' ? x - y :
+    op === 'multiply' ? x * y :
+    op === 'divide' ? x / y :
+    'Not a valid operation'
+    )
 }
 
-console.log(operation('1', '2', 'add'));
+console.log(operation('1', '2', 'divide'));
