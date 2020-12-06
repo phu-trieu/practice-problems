@@ -11,7 +11,7 @@
 // Return an empty array if the object is empty.
 
 const toArray = obj => {
-
+  const test = true;
 }
 
 console.log(toArray({a:1, b:2}));
