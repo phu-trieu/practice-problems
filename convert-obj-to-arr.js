@@ -10,8 +10,7 @@
 // Notes
 // Return an empty array if the object is empty.
 
-const toArray = obj => {
-  const test3 = true;
-}
+const toArray = obj =>  Object.entries(obj);
+
 
 console.log(toArray({a:1, b:2}));
