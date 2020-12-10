@@ -16,8 +16,7 @@
 // If you are already on the same tile, return false, as you would be advancing away.
 // Expect only positive integer inputs.
 
-const possibleBonus = (a, b) => {
+const possibleBonus = (a, b) => b - a > 0 && b - a <= 6
 
-}
 
-console.log(possibleBonus(3, 7));
+console.log(possibleBonus(1, 7));
