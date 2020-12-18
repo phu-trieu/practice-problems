@@ -71,7 +71,7 @@
 // Time Limit: 100 milliseconds.
 
 const isAdjacent = (matrix, node1, node2) => {
-  const test4 = true;
+  const test5 = true;
 }
 
 console.log(isAdjacent(
