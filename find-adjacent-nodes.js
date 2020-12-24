@@ -70,15 +70,13 @@
 // Graphs may have between 0 and 25, 000 nodes.
 // Time Limit: 100 milliseconds.
 
-const isAdjacent = (matrix, node1, node2) => {
-  const test0 = true;
-}
+const isAdjacent = (matrix, node1, node2) => !!matrix[node1][node2] && !!matrix[node2][node1];
+
 
 console.log(isAdjacent(
-[
-  [0, 1, 0, 1, 1],
-  [1, 0, 1, 0, 0],
-  [0, 1, 0, 1, 0],
-  [1, 0, 1, 0, 1],
-  [1, 0, 0, 1, 0]
-], 0, 3));
+  [
+    [0, 1, 0, 0],
+    [1, 0, 1, 1],
+    [0, 1, 0, 1],
+    [0, 1, 1, 0]
+  ], 0, 1));
