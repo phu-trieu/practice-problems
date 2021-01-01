@@ -9,10 +9,7 @@
 // alphabetPosition("The sunset sets at twelve o' clock.")
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"(as a string)
 
-const alphabetPosition = str => {
-  let str2 = '';
-  str.toLowerCase().split('').forEach(char => str2 = ' ' + char.charCodeAt() + str2);
-  return str2.split(' ');
-}
+const alphabetPosition = str => str.toLowerCase().match(/[a-z]/gi).map(char => char.charCodeAt() - 96).join(' ');
+
 
 console.log(alphabetPosition('The sunset sets at twelve o\'clock'));
