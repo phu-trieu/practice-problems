@@ -9,7 +9,8 @@
 // divisors(13); // should return "13 is prime"
 
 const divisors = n => {
-
+  const divs = [...Array(n + 1).keys()].filter(i => n % i === 0 && i !== 1 && i !== n);
+  return (divs.length ? divs : `${n} is prime`);
 }
 
-console.log(divisors(12));
+console.log(divisors(14));
