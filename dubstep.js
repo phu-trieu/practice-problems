@@ -28,8 +28,7 @@
 // songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
 //   // =>  WE ARE THE CHAMPIONS MY FRIEND
 
-const songDecoder = song => {
+const songDecoder = song => song.replace(/(WUB)+/gi, ' ').trim();
 
-}
 
-console.log(songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"));
+console.log(songDecoder("WUBWUBWUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"));
