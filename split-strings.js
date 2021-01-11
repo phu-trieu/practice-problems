@@ -8,7 +8,10 @@
 // solution('abcdef') // should return ['ab', 'cd', 'ef']
 
 const split = str => {
-
+  if (str.length % 2 !== 0) {
+    str += '_';
+  }
+  return (str ? str.match(/\S ?\S/gi) : []);
 }
 
-console.log(split('abcdef'));
+console.log(split(''));
