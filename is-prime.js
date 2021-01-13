@@ -18,7 +18,7 @@
 // is_prime(-1) /* false */
 
 const isPrime = num => {
-
+  return [...Array(Math.abs(num)).keys()].filter(n => num % n === 0).length === 1;
 }
 
-console.log(isPrime(2));
+console.log(isPrime(-8));
