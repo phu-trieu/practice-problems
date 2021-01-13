@@ -18,7 +18,12 @@
 // is_prime(-1) /* false */
 
 const isPrime = num => {
-  return [...Array(Math.abs(num)).keys()].filter(n => num % n === 0).length === 1;
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  return num > 1;
 }
 
-console.log(isPrime(-8));
+console.log(isPrime(999331));
