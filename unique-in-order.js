@@ -8,8 +8,12 @@
 // uniqueInOrder('ABBCcAD') == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1, 2, 2, 3, 3]) == [1, 2, 3]
 
-const uniqueInOrder = arr => {
+const uniqueInOrder = seq => [...seq].filter((v, i, a) => {
+    if (v !== a[i + 1]) return v
+  })
 
-}
 
+console.log(uniqueInOrder('ABBCcAD'));
+console.log(uniqueInOrder('122333'));
 console.log(uniqueInOrder([1, 2, 2, 3, 3, 3]));
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));
