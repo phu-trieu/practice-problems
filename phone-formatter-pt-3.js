@@ -7,7 +7,9 @@
 //   Don't forget the space after the closing parentheses!
 
 const createPhoneNumber = num => {
-
+  const str = num.join('');
+  const regex = /(\d{3})(\d{3})(\d{4})/gi
+  return str.replace(regex, `($1) $2-$3`)
 }
 
 console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]))
