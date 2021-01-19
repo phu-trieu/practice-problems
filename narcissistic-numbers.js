@@ -16,8 +16,9 @@
 // Error checking for text strings or other invalid inputs is not required, only
 // valid positive non - zero integers will be passed into the function.
 
-const narcisstic = num => {
+const narcissistic = num => [...String(num)].reduce((accumulator, currentValue, i, arr) => {
+    return accumulator + Math.pow(Number(currentValue), arr.length)
+  }, 0) === num
 
-}
 
-console.log(narcisstic(153));
+console.log(narcissistic(153));
