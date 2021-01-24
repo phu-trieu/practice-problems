@@ -23,7 +23,26 @@
 // M          1, 000
 
 const decoder = numerals => {
+  const symbols = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  }
 
+  return [...numerals].reduce((accumulator, currentValue, i, a) => {
+    if (symbols[currentValue] < symbols[a[i + 1]]) {
+      return accumulator - symbols[currentValue]
+    }
+    return accumulator + symbols[currentValue];
+  }, 0)
 }
 
-console.log(decoder('XXI'));
+console.log(decoder('XXI'), 21)
+console.log(decoder('I'), 1)
+console.log(decoder('IV'), 4)
+console.log(decoder('MMVIII'), 2008)
+console.log(decoder('MDCLXVI'), 1666)
