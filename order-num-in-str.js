@@ -11,8 +11,8 @@
 // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 // ""  -->  ""
 
-const order = words => {
-  return words.split(' ').sort((a, b) => Number(a.split(/[a-zA-Z]/gi).join('')) - Number(b.split(/[a-zA-Z]/gi).join('')))
-}
+const order = words => words.split(' ').sort((a, b) => Number(a.match(/\d/gi)) - Number(b.match(/\d/gi))).join(' ');
+
 
 console.log(order("is2 Thi1s T4est 3a"));
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
