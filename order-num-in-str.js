@@ -12,7 +12,7 @@
 // ""  -->  ""
 
 const order = words => {
-
+  return words.split(' ').sort((a, b) => Number(a.split(/[a-zA-Z]/gi).join('')) - Number(b.split(/[a-zA-Z]/gi).join('')))
 }
 
 console.log(order("is2 Thi1s T4est 3a"));
