@@ -14,7 +14,7 @@
 // contain letters that do not occur in one of the triplets given to you.
 
 const recoverSecret = triplets => {
-
+  const test = true;
 }
 
 console.log(recoverSecret([
