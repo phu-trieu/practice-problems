@@ -14,12 +14,30 @@
 // contain letters that do not occur in one of the triplets given to you.
 
 const recoverSecret = triplets => {
-  console.log(triplets.length)
-  for (let i = 0; i < triplets.length; i++) {
-    for (let j = 0; j < triplets[i].length; j++) {
-      console.log(triplets[i][j])
+  const arr = [];
+  triplets.forEach(entry => {
+    let x = entry[0];
+    let y = entry[1];
+    let z = entry[2];
+    if (!arr.includes(x)) {
+      arr.unshift(x);
     }
-  }
+    if (!arr.includes(y)) {
+      arr.splice(arr.indexOf(x) + 1, 0, y);
+    }
+    if (arr.includes(y) && arr.indexOf(y) < arr.indexOf(x)) {
+      arr.splice(arr.indexOf(y), 1);
+      arr.splice(arr.indexOf(x) + 1, 0, y);
+    }
+    if (!arr.includes(z)) {
+      arr.splice(arr.indexOf(y) + 1, 0, z);
+    }
+    if (arr.includes(z) && arr.indexOf(z) < arr.indexOf(y)) {
+      arr.splice(arr.indexOf(z), 1);
+      arr.splice(arr.indexOf(y) + 1, 0, z);
+    }
+  })
+  return arr.join('');
 }
 
 console.log(recoverSecret([
