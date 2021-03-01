@@ -9,7 +9,11 @@
 // it must correctly handle negative numbers as input.
 
 const fib = n => {
-
+  const arr = [0, 1];
+  for (let i = 1; i < n; i++) {
+    arr.push(arr[i] + arr[i - 1]);
+  }
+  return arr;
 }
 
 console.log(fib(25));
