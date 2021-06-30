@@ -40,7 +40,16 @@
 // ]); // => 19
 
 const sumIntervals = intervals => {
-
+  const arrOfRanges = intervals.map(int => [...Array(int[1] + 1).keys()].splice(int[0]));
+  for (let i = 0; i < arrOfRanges.length; i++) {
+    let j = i + 1;
+    if (j === arrOfRanges.length) continue;
+    console.log(j);
+    console.log(arrOfRanges[j])
+    // if (arrOfRanges[i].includes(arrOfRanges[j][0])) console.log('yes')
+  }
+  console.log(arrOfRanges);
+  console.log(arrOfRanges[0].includes(arrOfRanges[2][0]))
 }
 
 console.log(sumIntervals([
