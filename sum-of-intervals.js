@@ -40,16 +40,25 @@
 // ]); // => 19
 
 const sumIntervals = intervals => {
-  const arrOfRanges = intervals.map(int => [...Array(int[1] + 1).keys()].splice(int[0]));
-  for (let i = 0; i < arrOfRanges.length; i++) {
-    let j = i + 1;
-    if (j === arrOfRanges.length) continue;
-    console.log(j);
-    console.log(arrOfRanges[j])
-    // if (arrOfRanges[i].includes(arrOfRanges[j][0])) console.log('yes')
+  /** sort array of intervals by starting value */
+  intervals.sort((a, b) => a[0] - b[0]);
+  const arrOfOverlaps = [];
+  /** push first interval into new array */
+  arrOfOverlaps.push(intervals[0]);
+  for (let i = 1; i < intervals.length; i++) {
+    const compareInterval = arrOfOverlaps[arrOfOverlaps.length - 1];
+    /** if next interval overlaps with top interval in arrOfOverlaps, update top interval's end value */
+    if (intervals[i][0] >= compareInterval[0] && intervals[i][0] <= compareInterval[1]) {
+      if (intervals[i][1] > compareInterval[1]) {
+        arrOfOverlaps[arrOfOverlaps.length - 1][1] = intervals[i][1]
+      }
+      /** if no overlap, push interval into arrOfOverlaps */
+    } else {
+      arrOfOverlaps.push(intervals[i])
+    }
   }
-  console.log(arrOfRanges);
-  console.log(arrOfRanges[0].includes(arrOfRanges[2][0]))
+  const reducer = (acc, currentValue) => acc + (currentValue[1] - currentValue[0])
+  return arrOfOverlaps.reduce(reducer, 0)
 }
 
 console.log(sumIntervals([
@@ -58,4 +67,4 @@ console.log(sumIntervals([
   [1, 6],
   [16, 19],
   [5, 11]
-]));
+])); // => 19
